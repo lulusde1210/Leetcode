@@ -7,14 +7,13 @@ class Solution:
         longest = 0
 
         while j < len(s):
-            if s[j] not in letter_set:
-                longest = max(longest, j-i+1)
-                letter_set.add(s[j])
-                j+=1
-            else:
-                while s[j] in letter_set:
+            while s[j] in letter_set:
                     letter_set.remove(s[i])
                     i += 1
+            longest = max(longest, j-i+1)
+            letter_set.add(s[j])
+            j+=1
+                
         
         return longest
 
