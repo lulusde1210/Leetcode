@@ -8,7 +8,7 @@ class Solution:
 
         while j < len(s):
             if s[j] not in letter_set:
-                longest = max(longest, len(s[i:j+1]))
+                longest = max(longest, j-i+1)
                 letter_set.add(s[j])
                 j+=1
             else:
