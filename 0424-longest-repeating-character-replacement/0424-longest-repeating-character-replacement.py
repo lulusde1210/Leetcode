@@ -4,7 +4,7 @@ class Solution:
          longest = 0
          count = defaultdict(int)
 
-         while r < len(s):
+         for r in range(len(s)):
              count[s[r]] += 1
              most = max(count.values())
              sLength = r-l+1
@@ -14,6 +14,5 @@ class Solution:
              else:
                  count[s[l]] -= 1
                  l += 1
-             r += 1
 
          return longest
