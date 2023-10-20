@@ -4,13 +4,12 @@ class Solution:
         match = {"(":")", "{":"}", "[":"]"}
 
         for c in s:
-            if c in match.keys():
+            if c in match:
                 stack.append(c)
             else:
                 if not stack or match[stack[-1]] != c:
                     return False
-                else:
-                    stack.pop()
+                stack.pop()
         
         return len(stack) == 0
                 
