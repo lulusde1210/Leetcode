@@ -9,7 +9,7 @@ class Solution:
             if c in match.keys():
                 stack.append(c)
             else:
-                if not stack or (stack and match[stack[-1]]) != c:
+                if not stack or match[stack[-1]] != c:
                     return False
                 else:
                     stack.pop()
