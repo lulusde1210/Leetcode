@@ -5,13 +5,11 @@ class Solution:
 
         while start < end:
             if s[start] != s[end]:
-                s1 = "".join(s[:start] + s[start+1:])
-                s2 = "".join(s[:end] + s[end+1:])
+                skip_start = s[start+1:end+1]
+                skip_end = s[start:end]
 
-                if s1 != s1[::-1] and s2 != s2[::-1]:
-                    return False
-                else:
-                    return True
+                return (skip_start == skip_start[::-1] or skip_end == skip_end[::-1])
+
             start += 1
             end -= 1
 
